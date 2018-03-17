@@ -14,4 +14,15 @@ describe 'navigation' do
 			expect(page).to have_content(Date.today)
 		end
 	end
+
+	describe 'editing' do 
+		it 'can be edited' do 
+			@user_scenario = UserScenario.create(start_date: Date.today, number_days: 30, initial_lended_amount: 300)
+			visit edit_user_scenario_path(@user_scenario.id)
+			fill_in 'user_scenario[number_days]', with: 60
+
+			click_on 'Submit'
+			expect(page).to have_content(60)
+		end
+	end
 end

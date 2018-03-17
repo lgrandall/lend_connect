@@ -1,0 +1,6 @@
+<p><%= @user_scenario.inspect %></p>
+
+<p><%= link_to "Index", user_scenarios_path %>
+<%= link_to 'Edit', edit_user_scenario_path(@user_scenario) %>
+<%= link_to 'Delete', user_scenario_path(@user_scenario), method: :delete, data: {confirm: 'Are you sure?'} %>
+</p>
