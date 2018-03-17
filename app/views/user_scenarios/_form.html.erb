@@ -1,0 +1,12 @@
+<%= form_for @user_scenario do |f| %>
+	<%= f.label :start_date %>
+	<%= f.date_field :start_date %>
+
+	<%= f.label :number_days, 'Number of Days' %>
+	<%= f.number_field :number_days %>
+
+	<%= f.label :initial_lended_amount %>
+	<%= f.number_field :initial_lended_amount %>
+
+	<%= f.submit 'Submit' %>
+<% end %>

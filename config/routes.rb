@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_scenarios
   devise_for :users
-	root to: 'static#home'
+	root to: 'user_scenarios#index'
 end

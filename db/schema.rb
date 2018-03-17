@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316030154) do
+ActiveRecord::Schema.define(version: 20180317025603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "user_scenarios", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "start_date"
+    t.integer  "number_days"
+    t.decimal  "initial_lended_amount", precision: 10, scale: 2
+    t.decimal  "average_interest",      precision: 4,  scale: 3
+    t.decimal  "withdraw_at",           precision: 10, scale: 2
+    t.decimal  "withdraw_percent"
+    t.decimal  "reinvest_1010"
+    t.decimal  "reinvest_5010"
+    t.decimal  "reinvest_10010"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.index ["user_id"], name: "index_user_scenarios_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +50,5 @@ ActiveRecord::Schema.define(version: 20180316030154) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "user_scenarios", "users"
 end
