@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180317025603) do
+ActiveRecord::Schema.define(version: 20180318185215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tier_literals", force: :cascade do |t|
+    t.decimal  "tier_pct",   precision: 3,  scale: 3
+    t.integer  "tier_days"
+    t.decimal  "tier_min",   precision: 10, scale: 2
+    t.decimal  "tier_max",   precision: 10, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "tier_name"
+  end
 
   create_table "user_scenarios", force: :cascade do |t|
     t.integer  "user_id"

@@ -1,0 +1,2 @@
+class TierLiteralsController < ApplicationController
+end

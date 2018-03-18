@@ -1,0 +1,2 @@
+class TierLiteral < ApplicationRecord
+end
