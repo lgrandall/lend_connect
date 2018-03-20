@@ -4,10 +4,10 @@
 	<p><%= "Scenario #{user_scenario.id}  -  " %>        
 	<%= "Start date: #{user_scenario.start_date}  -  " %>
 	<%= "Initital Lended amount $#{user_scenario.initial_lended_amount}" %>
-	<%= link_to 'Show', user_scenario %>
 	<%= link_to 'Edit', edit_user_scenario_path(user_scenario) %>
 	<%= link_to 'Delete', user_scenario, method: :delete, data: {confirm: 'Are you sure?'} %>
 	</p>
 <% end %>
 
 <%= link_to 'New Record', new_user_scenario_path %>
+

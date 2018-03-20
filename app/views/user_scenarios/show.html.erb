@@ -1,5 +1,34 @@
 <p><%= @user_scenario.inspect %></p>
+<%= @tier_2.tier_max %>r
 
+<% end_date = @user_scenario.start_date.next_day(@user_scenario.number_days - 1) %>
+
+<table width="60%" class="table table-striped table-sm">
+	<tr>
+		<th>Day</th>
+		<th>Date</th>
+		<th>Interest</th>
+		<th>Wallet Balance</th>
+		<th>Wallet Balance</th>
+		<th>Active Investment</th>
+		<th>Extra Interest</th>
+		<th>Extra Rate</th>
+	</tr>
+	<% @user_scenario.start_date.upto(end_date) do |date| %>
+	<% @days_of_plan += 1 %>
+	<tr>
+		<td><%= @days_of_plan %></td>
+		<td><%= date %></td>
+		<td><%= @interest %><td>
+		<td>0</td>
+		<td>0</td>
+		<td><%= @active_investment %></td>
+		<% extra_interest_calc(@active_investment) %>
+		<td><%= @extra_interest %></td>
+		<td><%= @extra_interest_rate %></td>
+	</tr>
+	<% end %>
+</table>
 <p><%= link_to "Index", user_scenarios_path %>
 <%= link_to 'Edit', edit_user_scenario_path(@user_scenario) %>
 <%= link_to 'Delete', user_scenario_path(@user_scenario), method: :delete, data: {confirm: 'Are you sure?'} %>

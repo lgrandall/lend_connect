@@ -1,3 +1,37 @@
 <%= render partial: 'form', locals: { source: 'edit' } %>
 
+
+<% end_date = @user_scenario.start_date.next_day(@user_scenario.number_days - 1) %>
+<div <div class="table-responsive">
+	<table class="table table-striped table-sm">
+		<thead>
+			<tr >
+				<th>Day</th>
+				<th>Date</th>
+				<th>Interest</th>
+				<th>Wallet Balance</th>
+				<th>Wallet Balance</th>
+				<th>Active Investment</th>
+				<th>Extra Interest</th>
+				<th>Extra Rate</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @user_scenario.start_date.upto(end_date) do |date| %>
+		<% @days_of_plan += 1 %>
+		<tr>
+			<td><%= @days_of_plan %></td>
+			<td><%= date %></td>
+			<td><%= @interest %></td>
+			<td>0</td>
+			<td>0</td>
+			<td><%= @active_investment %></td>
+			<% extra_interest_calc(@active_investment) %>
+			<td><%= @extra_interest %></td>
+			<td><%= @extra_interest_rate %></td>
+		</tr>
+		<% end %>
+	</tbody>
+	</table>
+</div>
 <%= link_to "Index", user_scenarios_path %>
