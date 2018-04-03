@@ -1,0 +1,177 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Add Investments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>User scenario</th>
+      <th>Newinvest sun</th>
+      <th>Newinvest amt sun</th>
+      <th>Newinvest mon</th>
+      <th>Newinvest amt mon</th>
+      <th>Newinvest tue</th>
+      <th>Newinvest amt tue</th>
+      <th>Newinvest wed</th>
+      <th>Newinvest amt wed</th>
+      <th>Newinvest thu</th>
+      <th>Newinvest amt thu</th>
+      <th>Newinvest fri</th>
+      <th>Newinvest amt fri</th>
+      <th>Newinvest sat</th>
+      <th>Newinvest amt sat</th>
+      <th>Newinvest month day 1</th>
+      <th>Newinvest month day 1 amt</th>
+      <th>Newinvest month day 2</th>
+      <th>Newinvest month day 2 amt</th>
+      <th>Newinvest month day 3</th>
+      <th>Newinvest month day 3 amt</th>
+      <th>Newinvest month day 4</th>
+      <th>Newinvest month day 4 amt</th>
+      <th>Newinvest month day 5</th>
+      <th>Newinvest month day 5 amt</th>
+      <th>Newinvest month day 6</th>
+      <th>Newinvest month day 6 amt</th>
+      <th>Newinvest month day 7</th>
+      <th>Newinvest month day 7 amt</th>
+      <th>Newinvest month day 8</th>
+      <th>Newinvest month day 8 amt</th>
+      <th>Newinvest month day 9</th>
+      <th>Newinvest month day 9 amt</th>
+      <th>Newinvest month day 10</th>
+      <th>Newinvest month day 10 amt</th>
+      <th>Newinvest month day 11</th>
+      <th>Newinvest month day 11 amt</th>
+      <th>Newinvest month day 12</th>
+      <th>Newinvest month day 12 amt</th>
+      <th>Newinvest month day 13</th>
+      <th>Newinvest month day 13 amt</th>
+      <th>Newinvest month day 14</th>
+      <th>Newinvest month day 14 amt</th>
+      <th>Newinvest month day 15</th>
+      <th>Newinvest month day 15 amt</th>
+      <th>Newinvest month day 16</th>
+      <th>Newinvest month day 16 amt</th>
+      <th>Newinvest month day 17</th>
+      <th>Newinvest month day 17 amt</th>
+      <th>Newinvest month day 18</th>
+      <th>Newinvest month day 18 amt</th>
+      <th>Newinvest month day 19</th>
+      <th>Newinvest month day 19 amt</th>
+      <th>Newinvest month day 20</th>
+      <th>Newinvest month day 20 amt</th>
+      <th>Newinvest month day 21</th>
+      <th>Newinvest month day 21 amt</th>
+      <th>Newinvest month day 22</th>
+      <th>Newinvest month day 22 amt</th>
+      <th>Newinvest month day 23</th>
+      <th>Newinvest month day 23 amt</th>
+      <th>Newinvest month day 24</th>
+      <th>Newinvest month day 24 amt</th>
+      <th>Newinvest month day 25</th>
+      <th>Newinvest month day 25 amt</th>
+      <th>Newinvest month day 26</th>
+      <th>Newinvest month day 26 amt</th>
+      <th>Newinvest month day 27</th>
+      <th>Newinvest month day 27 amt</th>
+      <th>Newinvest month day 28</th>
+      <th>Newinvest month day 28 amt</th>
+      <th>Newinvest month day 29</th>
+      <th>Newinvest month day 29 amt</th>
+      <th>Newinvest month day 30</th>
+      <th>Newinvest month day 30 amt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @add_investments.each do |add_investment| %>
+      <tr>
+        <td><%= add_investment.user %></td>
+        <td><%= add_investment.user_scenario %></td>
+        <td><%= add_investment.newinvest_sun %></td>
+        <td><%= add_investment.newinvest_amt_sun %></td>
+        <td><%= add_investment.newinvest_mon %></td>
+        <td><%= add_investment.newinvest_amt_mon %></td>
+        <td><%= add_investment.newinvest_tue %></td>
+        <td><%= add_investment.newinvest_amt_tue %></td>
+        <td><%= add_investment.newinvest_wed %></td>
+        <td><%= add_investment.newinvest_amt_wed %></td>
+        <td><%= add_investment.newinvest_thu %></td>
+        <td><%= add_investment.newinvest_amt_thu %></td>
+        <td><%= add_investment.newinvest_fri %></td>
+        <td><%= add_investment.newinvest_amt_fri %></td>
+        <td><%= add_investment.newinvest_sat %></td>
+        <td><%= add_investment.newinvest_amt_sat %></td>
+        <td><%= add_investment.newinvest_month_day_1 %></td>
+        <td><%= add_investment.newinvest_month_day_1_amt %></td>
+        <td><%= add_investment.newinvest_month_day_2 %></td>
+        <td><%= add_investment.newinvest_month_day_2_amt %></td>
+        <td><%= add_investment.newinvest_month_day_3 %></td>
+        <td><%= add_investment.newinvest_month_day_3_amt %></td>
+        <td><%= add_investment.newinvest_month_day_4 %></td>
+        <td><%= add_investment.newinvest_month_day_4_amt %></td>
+        <td><%= add_investment.newinvest_month_day_5 %></td>
+        <td><%= add_investment.newinvest_month_day_5_amt %></td>
+        <td><%= add_investment.newinvest_month_day_6 %></td>
+        <td><%= add_investment.newinvest_month_day_6_amt %></td>
+        <td><%= add_investment.newinvest_month_day_7 %></td>
+        <td><%= add_investment.newinvest_month_day_7_amt %></td>
+        <td><%= add_investment.newinvest_month_day_8 %></td>
+        <td><%= add_investment.newinvest_month_day_8_amt %></td>
+        <td><%= add_investment.newinvest_month_day_9 %></td>
+        <td><%= add_investment.newinvest_month_day_9_amt %></td>
+        <td><%= add_investment.newinvest_month_day_10 %></td>
+        <td><%= add_investment.newinvest_month_day_10_amt %></td>
+        <td><%= add_investment.newinvest_month_day_11 %></td>
+        <td><%= add_investment.newinvest_month_day_11_amt %></td>
+        <td><%= add_investment.newinvest_month_day_12 %></td>
+        <td><%= add_investment.newinvest_month_day_12_amt %></td>
+        <td><%= add_investment.newinvest_month_day_13 %></td>
+        <td><%= add_investment.newinvest_month_day_13_amt %></td>
+        <td><%= add_investment.newinvest_month_day_14 %></td>
+        <td><%= add_investment.newinvest_month_day_14_amt %></td>
+        <td><%= add_investment.newinvest_month_day_15 %></td>
+        <td><%= add_investment.newinvest_month_day_15_amt %></td>
+        <td><%= add_investment.newinvest_month_day_16 %></td>
+        <td><%= add_investment.newinvest_month_day_16_amt %></td>
+        <td><%= add_investment.newinvest_month_day_17 %></td>
+        <td><%= add_investment.newinvest_month_day_17_amt %></td>
+        <td><%= add_investment.newinvest_month_day_18 %></td>
+        <td><%= add_investment.newinvest_month_day_18_amt %></td>
+        <td><%= add_investment.newinvest_month_day_19 %></td>
+        <td><%= add_investment.newinvest_month_day_19_amt %></td>
+        <td><%= add_investment.newinvest_month_day_20 %></td>
+        <td><%= add_investment.newinvest_month_day_20_amt %></td>
+        <td><%= add_investment.newinvest_month_day_21 %></td>
+        <td><%= add_investment.newinvest_month_day_21_amt %></td>
+        <td><%= add_investment.newinvest_month_day_22 %></td>
+        <td><%= add_investment.newinvest_month_day_22_amt %></td>
+        <td><%= add_investment.newinvest_month_day_23 %></td>
+        <td><%= add_investment.newinvest_month_day_23_amt %></td>
+        <td><%= add_investment.newinvest_month_day_24 %></td>
+        <td><%= add_investment.newinvest_month_day_24_amt %></td>
+        <td><%= add_investment.newinvest_month_day_25 %></td>
+        <td><%= add_investment.newinvest_month_day_25_amt %></td>
+        <td><%= add_investment.newinvest_month_day_26 %></td>
+        <td><%= add_investment.newinvest_month_day_26_amt %></td>
+        <td><%= add_investment.newinvest_month_day_27 %></td>
+        <td><%= add_investment.newinvest_month_day_27_amt %></td>
+        <td><%= add_investment.newinvest_month_day_28 %></td>
+        <td><%= add_investment.newinvest_month_day_28_amt %></td>
+        <td><%= add_investment.newinvest_month_day_29 %></td>
+        <td><%= add_investment.newinvest_month_day_29_amt %></td>
+        <td><%= add_investment.newinvest_month_day_30 %></td>
+        <td><%= add_investment.newinvest_month_day_30_amt %></td>
+        <td><%= link_to 'Show', add_investment %></td>
+        <td><%= link_to 'Edit', edit_add_investment_path(add_investment) %></td>
+        <td><%= link_to 'Destroy', add_investment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Add Investment', new_add_investment_path %>

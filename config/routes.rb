@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :add_investments
   resources :tier_literals
   resources :user_scenarios
   devise_for :users

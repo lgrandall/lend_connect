@@ -14,6 +14,7 @@ class UserScenariosController < ApplicationController
 	def new
 		@user_scenario = UserScenario.new 
 		@user_scenarios = UserScenario.all
+		@new_investment = NewInvestments.new
 	end 
 
 	def edit
