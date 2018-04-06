@@ -1,303 +1,265 @@
 <%= form_for AddInvestment.new do |f| %>
   <div class="form-group">
-    <%= f.label :newinvest_month_day_1, "1st" %>
-    <%= f.check_box :newinvest_month_day_1 %>
-  </div>
+    <div class="row">
+      <div class="col-">
+        <div class="form-group">
+          <h5>Day</h5>
+          <%= f.label :newinvest_month_day_1, "1st" %>
+          <%= f.check_box :newinvest_month_day_1 %>
+        </div>
 
-  <div class="field">
-    <%= f.text_field :newinvest_month_day_1_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_3, '3rd' %>
+          <%= f.check_box :newinvest_month_day_3 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_2, '2nd' %>
-    <%= f.check_box :newinvest_month_day_2 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_5, '5th' %>
+          <%= f.check_box :newinvest_month_day_5 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_2_amt %>
-    <%= f.text_field :newinvest_month_day_2_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_7,'7th' %>
+          <%= f.check_box :newinvest_month_day_7 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_3, '3rd' %>
-    <%= f.check_box :newinvest_month_day_3 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_9, '9th' %>
+          <%= f.check_box :newinvest_month_day_9 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_3_amt %>
-    <%= f.text_field :newinvest_month_day_3_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_11, '11th' %>
+          <%= f.check_box :newinvest_month_day_11 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_4, '4th' %>
-    <%= f.check_box :newinvest_month_day_4 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_13, '13th' %>
+          <%= f.check_box :newinvest_month_day_13 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_4_amt %>
-    <%= f.text_field :newinvest_month_day_4_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_15, '15th' %>
+          <%= f.check_box :newinvest_month_day_15 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_5, '5th' %>
-    <%= f.check_box :newinvest_month_day_5 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_17, '17th' %>
+          <%= f.check_box :newinvest_month_day_17 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_5_amt %>
-    <%= f.text_field :newinvest_month_day_5_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_19, '19th' %>
+          <%= f.check_box :newinvest_month_day_19 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_6, '6th' %>
-    <%= f.check_box :newinvest_month_day_6 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_21, '21st' %>
+          <%= f.check_box :newinvest_month_day_21 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_6_amt %>
-    <%= f.text_field :newinvest_month_day_6_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_23, '23rd' %>
+          <%= f.check_box :newinvest_month_day_23 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_7,'7th' %>
-    <%= f.check_box :newinvest_month_day_7 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_25, '25th' %>
+          <%= f.check_box :newinvest_month_day_25 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_7_amt %>
-    <%= f.text_field :newinvest_month_day_7_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_27, '27th' %>
+          <%= f.check_box :newinvest_month_day_27 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_8, '8th' %>
-    <%= f.check_box :newinvest_month_day_8 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_29, '29th' %>
+          <%= f.check_box :newinvest_month_day_29 %>
+        </div>
+      </div>
+      <div class="col-4">
+        <h5>Amount</h5>
+        <div style="margin-bottom: 17.75px"> 
+          <%= f.number_field :newinvest_month_day_1_amt %>
+        </div> 
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_8_amt %>
-    <%= f.text_field :newinvest_month_day_8_amt %>
-  </div>
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_3_amt %>
+        </div> 
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_9, '9th' %>
-    <%= f.check_box :newinvest_month_day_9 %>
-  </div>
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_5_amt %>
+        </div> 
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_9_amt %>
-    <%= f.text_field :newinvest_month_day_9_amt %>
-  </div>
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_7_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_9_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_11_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_13_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_15_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_17_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_19_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_21_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_23_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_25_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_27_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_29_amt %>
+        </div>     
+      </div>
+      <div class="col-1.5">
+        <div class="form-group">
+          <h5>Day</h5>
+          <%= f.label :newinvest_month_day_2, '2nd' %>
+          <%= f.check_box :newinvest_month_day_2 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_10, '10th' %>
-    <%= f.check_box :newinvest_month_day_10 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_4, '4th' %>
+          <%= f.check_box :newinvest_month_day_4 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_10_amt %>
-    <%= f.text_field :newinvest_month_day_10_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_6, '6th' %>
+          <%= f.check_box :newinvest_month_day_6 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_11, '11th' %>
-    <%= f.check_box :newinvest_month_day_11 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_8, '8th' %>
+          <%= f.check_box :newinvest_month_day_8 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_11_amt %>
-    <%= f.text_field :newinvest_month_day_11_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_10, '10th' %>
+          <%= f.check_box :newinvest_month_day_10 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_12, '12th' %>
-    <%= f.check_box :newinvest_month_day_12 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_12, '12th' %>
+          <%= f.check_box :newinvest_month_day_12 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_12_amt %>
-    <%= f.text_field :newinvest_month_day_12_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_14, '14th' %>
+          <%= f.check_box :newinvest_month_day_14 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_13, '13th' %>
-    <%= f.check_box :newinvest_month_day_13 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_16, '16th' %>
+          <%= f.check_box :newinvest_month_day_16 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_13_amt %>
-    <%= f.text_field :newinvest_month_day_13_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_18, '18th' %>
+          <%= f.check_box :newinvest_month_day_18 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_14, '14th' %>
-    <%= f.check_box :newinvest_month_day_14 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_20, '20th' %>
+          <%= f.check_box :newinvest_month_day_20 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_14_amt %>
-    <%= f.text_field :newinvest_month_day_14_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_22, '22nd' %>
+          <%= f.check_box :newinvest_month_day_22 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_15, '15th' %>
-    <%= f.check_box :newinvest_month_day_15 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_24, '24th' %>
+          <%= f.check_box :newinvest_month_day_24 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_15_amt %>
-    <%= f.text_field :newinvest_month_day_15_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_26, '26th' %>
+          <%= f.check_box :newinvest_month_day_26 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_16, '16th' %>
-    <%= f.check_box :newinvest_month_day_16 %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_28, '28th' %>
+          <%= f.check_box :newinvest_month_day_28 %>
+        </div>
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_16_amt %>
-    <%= f.text_field :newinvest_month_day_16_amt %>
-  </div>
+        <div class="form-group">
+          <%= f.label :newinvest_month_day_30, '30th' %>
+          <%= f.check_box :newinvest_month_day_30 %>
+        </div>
+      </div>
+      <div class="col-4">
+        <h5>Amount</h5>
+        <div style="margin-bottom: 17.75px"> 
+          <%= f.number_field :newinvest_month_day_2_amt %>
+        </div> 
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_17, '17th' %>
-    <%= f.check_box :newinvest_month_day_17 %>
-  </div>
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_4_amt %>
+        </div> 
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_17_amt %>
-    <%= f.text_field :newinvest_month_day_17_amt %>
-  </div>
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_6_amt %>
+        </div> 
 
-  <div class="field">
-    <%= f.label :newinvest_month_day_18, '18th' %>
-    <%= f.check_box :newinvest_month_day_18 %>
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_8_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_10_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_12_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_14_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_16_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_18_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_20_amt %>
+        </div>  
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_22_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_24_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_26_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_28_amt %>
+        </div> 
+        <div style="margin-bottom: 17.75px">
+          <%= f.number_field :newinvest_month_day_30_amt %>
+        </div> 
+      </div>        
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_18_amt %>
-    <%= f.text_field :newinvest_month_day_18_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_19, '19th' %>
-    <%= f.check_box :newinvest_month_day_19 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_19_amt %>
-    <%= f.text_field :newinvest_month_day_19_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_20, '20th' %>
-    <%= f.check_box :newinvest_month_day_20 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_20_amt %>
-    <%= f.text_field :newinvest_month_day_20_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_21, '21st' %>
-    <%= f.check_box :newinvest_month_day_21 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_21_amt %>
-    <%= f.text_field :newinvest_month_day_21_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_22, '22nd' %>
-    <%= f.check_box :newinvest_month_day_22 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_22_amt %>
-    <%= f.text_field :newinvest_month_day_22_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_23, '23rd' %>
-    <%= f.check_box :newinvest_month_day_23 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_23_amt %>
-    <%= f.text_field :newinvest_month_day_23_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_24, '24th' %>
-    <%= f.check_box :newinvest_month_day_24 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_24_amt %>
-    <%= f.text_field :newinvest_month_day_24_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_25, '25th' %>
-    <%= f.check_box :newinvest_month_day_25 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_25_amt %>
-    <%= f.text_field :newinvest_month_day_25_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_26, '26th' %>
-    <%= f.check_box :newinvest_month_day_26 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_26_amt %>
-    <%= f.text_field :newinvest_month_day_26_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_27, '27th' %>
-    <%= f.check_box :newinvest_month_day_27 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_27_amt %>
-    <%= f.text_field :newinvest_month_day_27_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_28, '28th' %>
-    <%= f.check_box :newinvest_month_day_28 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_28_amt %>
-    <%= f.text_field :newinvest_month_day_28_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_29, '29th' %>
-    <%= f.check_box :newinvest_month_day_29 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_29_amt %>
-    <%= f.text_field :newinvest_month_day_29_amt %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_30, '30th' %>
-    <%= f.check_box :newinvest_month_day_30 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :newinvest_month_day_30_amt %>
-    <%= f.text_field :newinvest_month_day_30_amt %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
