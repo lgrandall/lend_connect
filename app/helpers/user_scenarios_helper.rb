@@ -27,6 +27,8 @@ module UserScenariosHelper
 
 		extra_interest = extra_interest.round(2)
 
+		
+
 		if interest > 0    
 	    active_investment = active_investment + interest
   	end 

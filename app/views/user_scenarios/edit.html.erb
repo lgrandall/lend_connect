@@ -1,3 +1,4 @@
+<%= @add_investments.inspect %>
 <div class="container">
 	<div class="row">
 		<div class="col-6">
@@ -11,7 +12,7 @@
 
 
 
-
+<div><%= render partial: 'add_investments/form', locals: { source: 'new' } %></div>
 
 
 <% end_date = @user_scenario.start_date.next_day(@user_scenario.number_days - 1) %>

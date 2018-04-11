@@ -24,8 +24,8 @@ class AddInvestmentsController < ApplicationController
   # POST /add_investments
   # POST /add_investments.json
   def create
-    @add_investment = AddInvestment.new(add_investment_params)
-
+    @user_scenario = UserScenario.find(params[:id])
+    @add_investment = @user_scenario.add_investments.new(add_investment_params)
     respond_to do |format|
       if @add_investment.save
         format.html { redirect_to @add_investment, notice: 'Add investment was successfully created.' }

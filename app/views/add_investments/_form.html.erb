@@ -1,5 +1,5 @@
 
-<%= form_for AddInvestment.new do |f| %>
+<%= form_for @add_investment do |f| %>
 <div class="row form-group">
   <div class="col-3">
     <h5>Day of the Week</h5>
@@ -30,13 +30,13 @@
       <%=f.number_field :newinvest_amt_sun %>
     </div>
     <div style="margin-bottom: 15px">
-      <%=f.number_field :newinvest_amt_sun %>
+      <%=f.number_field :newinvest_amt_mon %>
     </div>
     <div style="margin-bottom: 15px">
-      <%=f.number_field :newinvest_amt_sun %>
+      <%=f.number_field :newinvest_amt_tue %>
     </div>
     <div>
-      <%=f.number_field :newinvest_amt_sun %>
+      <%=f.number_field :newinvest_amt_wed %>
     </div>
     
   </div>
