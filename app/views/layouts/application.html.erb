@@ -37,6 +37,16 @@
               <p><h6>ETH</h6></p>
             </div>
           </div>
+
+          <div class="col-sm-6">
+            <% if current_user %>
+              <%= link_to "Edit Account", edit_user_registration_path %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Register", new_user_registration_path %>
+              <%= link_to "Login", new_user_session_path %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
