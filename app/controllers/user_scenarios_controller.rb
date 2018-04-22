@@ -4,7 +4,13 @@ class UserScenariosController < ApplicationController
 	before_action :set_table_vars, only: [:show, :edit]
 
 	def index
-		@user_scenarios = UserScenario.all 
+		if current_user
+			@user_scenarios = UserScenario.posts_by(current_user)
+		else 
+			respond_to do |format|
+			format.html {redirect_to new_user_registration_path, notice: 'Please create an account' }
+		end
+		end
 	end
 
 	def show
@@ -19,12 +25,15 @@ class UserScenariosController < ApplicationController
 
 	def edit
 		@user_scenario = UserScenario.includes(:add_investments).find(params[:id])
-		@add_investment = AddInvestment.new
-		@user_scenarios = UserScenario.all
+
+			@this_add_investment = @user_scenario.add_investments
+			@add_investment = AddInvestment.new
+		@user_scenarios = UserScenario.posts_by(current_user)
 	end
 
 	def create
 		@user_scenario = UserScenario.new(user_scenario_params)
+		@user_scenario.user_id = current_user.id 
 
 		respond_to do |format|
 			if @user_scenario.save 

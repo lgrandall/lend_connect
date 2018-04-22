@@ -3,6 +3,7 @@
 <div class="dropdown">
 	<div class="row">
 		<div class="col-5">
+
 		  <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#exampleModal" data-focus="true" style="padding-top: -20px;margin-top: 5px">
 		    Dropdown button
 		  </button>
@@ -29,7 +30,7 @@
 
     						<div class="tab-content">
 							    <div class="tab-pane active" id="Weekday">
-							       <div><%= render partial: 'add_investments/form', locals: { source: 'new' } %></div>
+							       <div><%= render partial: 'add_investments/form', locals: { source: 'edit', add_investment: @user_scenario.add_investments.last } %></div>
 							    </div>
 
 							    <div class="tab-pane" id="Month">
@@ -43,6 +44,8 @@
 			      </div>
 			    </div>
 			  </div>
+			  
+	
 
 		  <button class="btn btn-secondary dropdown-toggle dropdown-format btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    Dropdown button 2
@@ -68,3 +71,7 @@
 		</div>
 	</div>
 </div>
+
+<%= render partial: 'add_investments/update_form', locals: { source: 'edit', add_investment: @user_scenario.add_investments.last } %>
+<p><%= @user_scenario.add_investments.last.id %></p>
+<p><%= @user_scenario.add_investments.last.newinvest_amt_sun %></p>
