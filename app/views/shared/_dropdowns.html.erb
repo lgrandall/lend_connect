@@ -31,14 +31,14 @@
     						<div class="tab-content">
 							    <div class="tab-pane active" id="Weekday">
 							    	<% if @user_scenario.add_investment.present? %>
-							       <div><%= render partial: 'add_investments/update_form', locals: { source: 'new'} %></div>
+							       <div><%= render partial: 'add_investments/update_form', locals: { source: 'edit'} %></div>
 							       <% else %>
-							       <div><%= render partial: 'add_investments/form', locals: { source: 'edit', user_scenario: @user_scenario, add_investment: @user_scenario.add_investment } %></div>
+							       <div><%= render partial: 'add_investments/form', locals: { source: 'new', user_scenario: @user_scenario, add_investment: @user_scenario.add_investment } %></div>
 							       <% end %>
 							    </div>
 
 							    <div class="tab-pane" id="Month">
-							      <div><%= render partial: 'add_investments/form_month', locals: { source: 'new' } %></div>
+							      <div><%= render partial: 'add_investment_months/form', locals: { source: 'new' } %></div>
 							    </div>
 							   </div>
 			      </div>

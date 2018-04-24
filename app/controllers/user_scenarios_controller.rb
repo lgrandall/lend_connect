@@ -19,6 +19,7 @@ class UserScenariosController < ApplicationController
 
 	def new
 		@add_investment = AddInvestment.new
+		@add_investment_month = AddInvestmentMonth.new
 		@user_scenario = UserScenario.new 
 		@user_scenarios = UserScenario.all
 		@user_scenario.add_investment = @add_investment
@@ -33,7 +34,12 @@ class UserScenariosController < ApplicationController
 		else
 			@add_investment = AddInvestment.new
 		end
-			
+
+		if @user_scenario.add_investment_month.present?
+			@add_investment_month = @user_scenario.add_investment_month
+		else
+			@add_investment_month = AddInvestment.new
+		end
 
 		@user_scenarios = UserScenario.posts_by(current_user)
 	end
@@ -97,5 +103,6 @@ class UserScenariosController < ApplicationController
 
 	def set_child
 		@add_investment = @user_scenario.add_investment
+		@add_investment_month = @user_scenario.add_investment_month
 	end
 end

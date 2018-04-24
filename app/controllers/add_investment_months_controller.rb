@@ -1,4 +1,5 @@
 class AddInvestmentMonthsController < ApplicationController
+  before_filter :find_parent, only: [:create, :edit]
   before_action :set_add_investment_month, only: [:show, :edit, :update, :destroy]
 
   # GET /add_investment_months
@@ -19,17 +20,21 @@ class AddInvestmentMonthsController < ApplicationController
 
   # GET /add_investment_months/1/edit
   def edit
+    @add_investment_month.user_scenario = @user_scenario
+    @add_investment_month.id = @user_scenario.add_investment_month.id
   end
 
   # POST /add_investment_months
   # POST /add_investment_months.json
   def create
-    @add_investment_month = AddInvestmentMonth.new(add_investment_month_params)
+    @add_investment_month = current_user.add_investment_months.build(add_investment_month_params)
+    @add_investment_month.user_scenario = @user_scenario
 
     respond_to do |format|
       if @add_investment_month.save
-        format.html { redirect_to @add_investment_month, notice: 'Add investment month was successfully created.' }
+        format.html { redirect_to @add_investment_month, notice: 'Add investment was successfully created.' }
         format.json { render :show, status: :created, location: @add_investment_month }
+        format.js 
       else
         format.html { render :new }
         format.json { render json: @add_investment_month.errors, status: :unprocessable_entity }
@@ -42,7 +47,7 @@ class AddInvestmentMonthsController < ApplicationController
   def update
     respond_to do |format|
       if @add_investment_month.update(add_investment_month_params)
-        format.html { redirect_to @add_investment_month, notice: 'Add investment month was successfully updated.' }
+        
         format.json { render :show, status: :ok, location: @add_investment_month }
       else
         format.html { render :edit }
@@ -62,6 +67,10 @@ class AddInvestmentMonthsController < ApplicationController
   end
 
   private
+
+    def find_parent
+      @user_scenario = UserScenario.find params[:user_scenario_id]
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_add_investment_month
       @add_investment_month = AddInvestmentMonth.find(params[:id])
