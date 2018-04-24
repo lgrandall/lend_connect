@@ -30,7 +30,11 @@
 
     						<div class="tab-content">
 							    <div class="tab-pane active" id="Weekday">
-							       <div><%= render partial: 'add_investments/form', locals: { source: 'edit', add_investment: @user_scenario.add_investments.last } %></div>
+							    	<% if @user_scenario.add_investment.present? %>
+							       <div><%= render partial: 'add_investments/update_form', locals: { source: 'new'} %></div>
+							       <% else %>
+							       <div><%= render partial: 'add_investments/form', locals: { source: 'edit', user_scenario: @user_scenario, add_investment: @user_scenario.add_investment } %></div>
+							       <% end %>
 							    </div>
 
 							    <div class="tab-pane" id="Month">
@@ -72,6 +76,9 @@
 	</div>
 </div>
 
-<%= render partial: 'add_investments/update_form', locals: { source: 'edit', add_investment: @user_scenario.add_investments.last } %>
-<p><%= @user_scenario.add_investments.last.id %></p>
-<p><%= @user_scenario.add_investments.last.newinvest_amt_sun %></p>
+<% if @user_scenario.add_investment.present? %>
+<%= @user_scenario.add_investment.id %>
+<%= @user_scenario.add_investment.newinvest_amt_sun %>
+<% end %>
+
+to get this to fully work, you need to split up the tables for month and week, so that you can seperatly present a new and edit form for them each.

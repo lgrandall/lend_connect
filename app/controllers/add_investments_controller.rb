@@ -1,4 +1,5 @@
 class AddInvestmentsController < ApplicationController
+  before_filter :find_parent, only: [:create, :edit]
   before_action :set_add_investment, only: [:show, :edit, :update, :destroy]
 
   # GET /add_investments
@@ -19,16 +20,15 @@ class AddInvestmentsController < ApplicationController
 
   # GET /add_investments/1/edit
   def edit
+    @add_investment.user_scenario = @user_scenario
+    @add_investment.id = @user_scenario.add_investment.id
   end
 
   # POST /add_investments
   # POST /add_investments.json
   def create
-    @user_scenario = UserScenario.find(params[:user_scenario_id])
     @add_investment = current_user.add_investments.build(add_investment_params)
-
-
-
+    @add_investment.user_scenario = @user_scenario
 
     respond_to do |format|
       if @add_investment.save
@@ -47,7 +47,7 @@ class AddInvestmentsController < ApplicationController
   def update
     respond_to do |format|
       if @add_investment.update(add_investment_params)
-        format.html { redirect_to @add_investment, notice: 'Add investment was successfully updated.' }
+    
         format.json { render :show, status: :ok, location: @add_investment }
       else
         format.html { render :edit }
@@ -67,6 +67,12 @@ class AddInvestmentsController < ApplicationController
   end
 
   private
+
+  def find_parent
+    @user_scenario = UserScenario.find params[:user_scenario_id]
+  end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_add_investment
       @add_investment = AddInvestment.find(params[:id])

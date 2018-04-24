@@ -25,21 +25,27 @@
 				<th>Active Investment</th>
 				<th>Extra Interest</th>
 				<th>Extra Rate</th>
+				<th>Additional Investment</th>
 			</tr>
 		</thead>
 		<tbody>
 		<% @user_scenario.start_date.upto(end_date) do |date| %>
 		<% @days_of_plan += 1 %>
+		<% plan_date = date %>
 		<tr>
 			<td><%= @days_of_plan %></td>
 			<td><%= date %></td>
 			<td><%= @interest %></td>
 			<td>0</td>
 			<td>0</td>
-			<td><%= @active_investment %></td>
-			<% extra_interest_calc(@active_investment) %>
+			<td><%= @active_investment + @additional_weekday_capital%></td>
+			<% extra_interest_calc(@active_investment, @additional_weekday_capital) %>
 			<td><%= @extra_interest %></td>
 			<td><%= @extra_interest_rate %></td>
+			<% if @user_scenario.add_investment.present? %>
+				<% additional_investments(date, @active_investment, @extra_interest) %>
+			<% end %>
+			<td><%= @additional_weekday_capital %> </td>			
 		</tr>
 		<% end %>
 	</tbody>

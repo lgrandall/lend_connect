@@ -1,6 +1,8 @@
 class UserScenario < ApplicationRecord
   belongs_to :user
-  has_many :add_investments
+  has_one :add_investment
+  accepts_nested_attributes_for :add_investment
+
 
   validates_presence_of :start_date, :number_days, :initial_lended_amount
 

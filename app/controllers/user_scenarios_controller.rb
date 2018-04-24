@@ -21,13 +21,20 @@ class UserScenariosController < ApplicationController
 		@add_investment = AddInvestment.new
 		@user_scenario = UserScenario.new 
 		@user_scenarios = UserScenario.all
+		@user_scenario.add_investment = @add_investment
 	end 
 
 	def edit
-		@user_scenario = UserScenario.includes(:add_investments).find(params[:id])
 
-			@this_add_investment = @user_scenario.add_investments
+		@user_scenario = UserScenario.includes(:add_investment).find(params[:id])
+		
+		if @user_scenario.add_investment.present?
+			@add_investment = @user_scenario.add_investment
+		else
 			@add_investment = AddInvestment.new
+		end
+			
+
 		@user_scenarios = UserScenario.posts_by(current_user)
 	end
 
@@ -45,6 +52,7 @@ class UserScenariosController < ApplicationController
 	end
 
 	def update
+
 		respond_to do |format|
 			if @user_scenario.update(user_scenario_params)
 				format.html {redirect_to edit_user_scenario_path(@user_scenario.id), notice: 'You did it!'}
@@ -78,11 +86,16 @@ class UserScenariosController < ApplicationController
     @tier_3 = TierLiteral.third
     @tier_4 = TierLiteral.last
     @days_of_plan = 0
-    @average_interest = 0.005
+    @average_interest = 0.001
     @extra_interest = 0.0
     @extra_interest_rate = 0.0
     @active_investment = @user_scenario.initial_lended_amount
     @interest = @active_investment * @average_interest
+    @additional_capital = 0.0
+    @additional_weekday_capital = 0.0
 	end
 
+	def set_child
+		@add_investment = @user_scenario.add_investment
+	end
 end
