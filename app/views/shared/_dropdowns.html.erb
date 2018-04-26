@@ -36,9 +36,12 @@
 							       <div><%= render partial: 'add_investments/form', locals: { source: 'new', user_scenario: @user_scenario, add_investment: @user_scenario.add_investment } %></div>
 							       <% end %>
 							    </div>
-
 							    <div class="tab-pane" id="Month">
-							      <div><%= render partial: 'add_investment_months/form', locals: { source: 'new' } %></div>
+								    <% if @user_scenario.add_investment_month.present? %>
+								    	<div><%= render partial: 'add_investment_months/update_form', locals: { source: 'edit' } %></div>
+								    <% else %>
+								      <div><%= render partial: 'add_investment_months/form', locals: { source: 'new' } %></div>
+								    <% end %>
 							    </div>
 							   </div>
 			      </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424015815) do
+ActiveRecord::Schema.define(version: 20180425025913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,52 +87,22 @@ ActiveRecord::Schema.define(version: 20180424015815) do
   create_table "add_investments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "user_scenario_id"
-    t.boolean  "newinvest_sun",                                       default: false
-    t.decimal  "newinvest_amt_sun",          precision: 10, scale: 2
-    t.boolean  "newinvest_mon",                                       default: false
-    t.decimal  "newinvest_amt_mon",          precision: 10, scale: 2
-    t.boolean  "newinvest_tue",                                       default: false
-    t.decimal  "newinvest_amt_tue",          precision: 10, scale: 2
-    t.boolean  "newinvest_wed",                                       default: false
-    t.decimal  "newinvest_amt_wed",          precision: 10, scale: 2
-    t.boolean  "newinvest_thu",                                       default: false
-    t.decimal  "newinvest_amt_thu",          precision: 10, scale: 2
-    t.boolean  "newinvest_fri",                                       default: false
-    t.decimal  "newinvest_amt_fri",          precision: 10, scale: 2
-    t.boolean  "newinvest_sat",                                       default: false
-    t.decimal  "newinvest_amt_sat",          precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_1_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_2_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_3_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_4_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_5_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_6_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_7_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_8_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_9_amt",  precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_10_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_11_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_12_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_13_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_14_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_15_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_16_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_17_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_18_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_19_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_20_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_21_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_22_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_23_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_24_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_25_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_26_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_27_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_28_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_29_amt", precision: 10, scale: 2
-    t.decimal  "newinvest_month_day_30_amt", precision: 10, scale: 2
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
+    t.boolean  "newinvest_sun",                              default: false
+    t.decimal  "newinvest_amt_sun", precision: 10, scale: 2
+    t.boolean  "newinvest_mon",                              default: false
+    t.decimal  "newinvest_amt_mon", precision: 10, scale: 2
+    t.boolean  "newinvest_tue",                              default: false
+    t.decimal  "newinvest_amt_tue", precision: 10, scale: 2
+    t.boolean  "newinvest_wed",                              default: false
+    t.decimal  "newinvest_amt_wed", precision: 10, scale: 2
+    t.boolean  "newinvest_thu",                              default: false
+    t.decimal  "newinvest_amt_thu", precision: 10, scale: 2
+    t.boolean  "newinvest_fri",                              default: false
+    t.decimal  "newinvest_amt_fri", precision: 10, scale: 2
+    t.boolean  "newinvest_sat",                              default: false
+    t.decimal  "newinvest_amt_sat", precision: 10, scale: 2
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
     t.index ["user_id"], name: "index_add_investments_on_user_id", using: :btree
     t.index ["user_scenario_id"], name: "index_add_investments_on_user_scenario_id", using: :btree
   end

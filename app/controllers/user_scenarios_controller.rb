@@ -19,10 +19,14 @@ class UserScenariosController < ApplicationController
 
 	def new
 		@add_investment = AddInvestment.new
+		@user_scenario.add_investment = @add_investment
+
 		@add_investment_month = AddInvestmentMonth.new
+		@user_scenario.add_investment_month = @add_investment_month
+
 		@user_scenario = UserScenario.new 
 		@user_scenarios = UserScenario.all
-		@user_scenario.add_investment = @add_investment
+		
 	end 
 
 	def edit
@@ -38,7 +42,7 @@ class UserScenariosController < ApplicationController
 		if @user_scenario.add_investment_month.present?
 			@add_investment_month = @user_scenario.add_investment_month
 		else
-			@add_investment_month = AddInvestment.new
+			@add_investment_month = AddInvestmentMonth.new
 		end
 
 		@user_scenarios = UserScenario.posts_by(current_user)
@@ -99,6 +103,8 @@ class UserScenariosController < ApplicationController
     @interest = @active_investment * @average_interest
     @additional_capital = 0.0
     @additional_weekday_capital = 0.0
+    @additional_monthly_capital = 0.0
+
 	end
 
 	def set_child

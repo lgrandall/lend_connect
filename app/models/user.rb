@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :user_scenarios
   has_many :add_investments
+  has_many :add_investment_months
 end

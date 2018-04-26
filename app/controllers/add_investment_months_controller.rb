@@ -32,7 +32,7 @@ class AddInvestmentMonthsController < ApplicationController
 
     respond_to do |format|
       if @add_investment_month.save
-        format.html { redirect_to @add_investment_month, notice: 'Add investment was successfully created.' }
+        format.html { redirect_to edit_user_scenario_path(@user_scenario.id), notice: 'Add investment was successfully created.' }
         format.json { render :show, status: :created, location: @add_investment_month }
         format.js 
       else
