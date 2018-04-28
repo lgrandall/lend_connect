@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-6">
+		<div class="col-7">
 			<%= render partial: 'form', locals: { source: 'edit' } %>
 		</div>
 		<div class="col-5" data-user-scenario--id="<%= @user_scenario.id %>" >
@@ -20,13 +20,11 @@
 				<th>Day</th>
 				<th>Date</th>
 				<th>Interest</th>
-				<th>Wallet Balance</th>
-				<th>Wallet Balance</th>
 				<th>Active Investment</th>
 				<th>Extra Interest</th>
 				<th>Extra Rate</th>
-				<th>Additional Weekly Investment</th>
-				<th>Additional Monthly Investment</th>
+				<th>Add. Weekly </th>
+				<th>Add. Monthly </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,8 +35,6 @@
 			<td><%= @days_of_plan %></td>
 			<td><%= date %></td>
 			<td><%= @interest %></td>
-			<td>0</td>
-			<td>0</td>
 			<td><%= @active_investment  %></td>
 			<% extra_interest_calc(@active_investment, @additional_weekday_capital) %>
 			<td><%= @extra_interest %></td>

@@ -19,10 +19,8 @@ class UserScenariosController < ApplicationController
 
 	def new
 		@add_investment = AddInvestment.new
-		@user_scenario.add_investment = @add_investment
 
 		@add_investment_month = AddInvestmentMonth.new
-		@user_scenario.add_investment_month = @add_investment_month
 
 		@user_scenario = UserScenario.new 
 		@user_scenarios = UserScenario.all
