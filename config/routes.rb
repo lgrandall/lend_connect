@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :tier_literals
 
   resources :user_scenarios do 
@@ -11,4 +12,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 	root to: 'user_scenarios#index'
+
+	get 'home', to: 'pages#home'
 end

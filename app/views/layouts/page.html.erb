@@ -1,0 +1,60 @@
+	<!DOCTYPE html>
+<html>
+  <head>
+    <title>LendConnect</title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Dashboard Template for Bootstrap</title>
+    <%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <nav class="nav nav-masthead justify-content-center">
+          	<% if current_user %>
+          	<%= link_to "Edit Account", edit_user_registration_path, class: "nav-link" %>
+          	<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          	<% else %>
+          	<%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+          	<% end %>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Cyprus Investment</h1>
+        <p class="lead">Welcome to Cyprus.  Let us help you on your journey to understanding the world of crytpcurrencies, and learning how to make them work for you. </p>
+        <p class="lead">
+        	<% if current_user %>
+        	<%= link_to "Hop To It", user_scenarios_path, class: "btn btn-lg btn-secondary" %>
+          <% else %>
+          <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-secondary" %>
+          <% end %>
+        </p>
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+    <%= yield %>
+  	<%= render 'shared/alerts' %>
+  </body>
+</html>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
