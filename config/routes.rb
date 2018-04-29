@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :add_investments, only: [:update]
   resources :add_investment_months, only: [:update]
 
-  devise_for :users
-	root to: 'user_scenarios#index'
+  get 'home', to: 'pages#home'
 
-	get 'home', to: 'pages#home'
+  devise_for :users
+	root to: 'pages#home'
+
+	
 end

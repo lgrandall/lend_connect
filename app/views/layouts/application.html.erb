@@ -62,18 +62,19 @@
               </ul>
               <% end %>
             <% end %>
+            <%= link_to 'New Record', new_user_scenario_path, class: "btn btn-outline-success btn-block" %>
             <button class="btn btn-outline-primary dropdown-format btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_user.first_name.capitalize + " " + current_user.last_name.capitalize %>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <% if current_user %>
-                    <p align="center"><%= link_to "Edit Account", edit_user_registration_path %></p>
-                    <div class="dropdown-divider"></div>
-                    <p align="center"><%= link_to "Logout", destroy_user_session_path, method: :delete %><p>
-                  <% else %>
-                    <p align="center"><%= link_to "Register", new_user_registration_path %></p>
-                    <p align="center"><%= link_to "Login", new_user_session_path %></p>
-                  <% end %>
+              <% if current_user %>
+                <p align="center"><%= link_to "Edit Account", edit_user_registration_path %></p>
+                <div class="dropdown-divider"></div>
+                <p align="center"><%= link_to "Logout", destroy_user_session_path, method: :delete %><p>
+              <% else %>
+                <p align="center"><%= link_to "Register", new_user_registration_path %></p>
+                <p align="center"><%= link_to "Login", new_user_session_path %></p>
+              <% end %>
             </div>
           </div>
         </nav>

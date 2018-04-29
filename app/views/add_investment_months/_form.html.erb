@@ -1,7 +1,7 @@
 <%= form_for [@user_scenario, @add_investment_month], remote: true do |f| %>
   <div class="form-group">
     <div class="row">
-      <div class="col-">
+      <div class="col-1.5">
         <div class="form-group">
           <h5>Day</h5>
           <%= f.label :newinvest_month_day_1, "1st" %>
@@ -261,6 +261,7 @@
     </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class: "btn btn-primary" %>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   </div>
 <% end %>

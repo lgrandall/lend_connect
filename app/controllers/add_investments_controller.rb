@@ -34,7 +34,7 @@ class AddInvestmentsController < ApplicationController
       if @add_investment.save
         format.html { redirect_to @add_investment, notice: 'Add investment was successfully created.' }
         format.json { render :show, status: :created, location: @add_investment }
-        format.js 
+        format.js {render js: 'window.top.location.reload(true);'}
       else
         format.html { render :new }
         format.json { render json: @add_investment.errors, status: :unprocessable_entity }
@@ -47,8 +47,9 @@ class AddInvestmentsController < ApplicationController
   def update
     respond_to do |format|
       if @add_investment.update(add_investment_params)
-    
+        format.html {redirect_to edit_user_scenario_path(@user_scenario.id), notice: 'You did it!'}
         format.json { render :show, status: :ok, location: @add_investment }
+        format.js {render js: 'window.top.location.reload(true);'}
       else
         format.html { render :edit }
         format.json { render json: @add_investment.errors, status: :unprocessable_entity }

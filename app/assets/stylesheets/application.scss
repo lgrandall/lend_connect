@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   font-size: .875rem;
@@ -108,23 +109,28 @@ body {
   margin: 4px;
 }
 
-/*
-*Custom Styles
-*/
-
-
-
-
-
-.card {
+.form-card {
   margin: 0 auto;
   float: none; 
   margin-bottom: 10px; 
   width: 22rem;
 }
 
+/*
+*Custom Styles
+*/
+
+.icons { 
+  font-size: 1.5em;
+  margin: 2px;
+}
+
 .devise-card > .card {
   width: 70rem;
+}
+
+.index-card {
+  width: 20rem;
 }
 
 .card-header {

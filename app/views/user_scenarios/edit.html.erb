@@ -53,7 +53,9 @@
 	</table>
 </div>
 
-<%= link_to "Index", user_scenarios_path %>
+<%= link_to "Index", user_scenarios_path, class: "btn btn-primary" %>
+
+<%= link_to "Remove Model", user_scenario_path, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
 
 
 
