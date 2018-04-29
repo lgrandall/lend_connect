@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :user_scenarios
-  has_many :add_investments
-  has_many :add_investment_months
+  has_many :user_scenarios, dependent: :destroy
+  has_many :add_investments, dependent: :destroy
+  has_many :add_investment_months, dependent: :destroy
 end

@@ -1,8 +1,8 @@
 class UserScenario < ApplicationRecord
   belongs_to :user
 
-  has_one :add_investment
-  has_one :add_investment_month
+  has_one :add_investment, dependent: :destroy
+  has_one :add_investment_month, dependent: :destroy
 
   accepts_nested_attributes_for :add_investment
   accepts_nested_attributes_for :add_investment_month
