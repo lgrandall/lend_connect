@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resources :user_scenarios do 
   	resource :add_investment_month, except: [:update]
-  	resource :add_investment, except: [:update]
+  	resource :add_investment, except: [:update, :destroy]
   end
 
-  resources :add_investments, only: [:update]
+  resources :add_investments, only: [:update, :destroy]
   resources :add_investment_months, only: [:update]
 
   get 'home', to: 'pages#home'
