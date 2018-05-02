@@ -2,6 +2,7 @@ class UserScenariosController < ApplicationController
 
 	before_action :set_user_scenario, only: [:show, :edit, :update, :destroy]
 	before_action :set_table_vars, only: [:show, :edit]
+	layout "user_scenario"
 
 	def index
 		if current_user

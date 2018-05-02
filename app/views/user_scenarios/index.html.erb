@@ -1,9 +1,9 @@
 <% if @user_scenarios.present? %>
 	<h1 style="margin-bottom: 20px; margin-top: -15px;">Your Models</h1>
 <% else %>
-	<h3> <%= "Welcome #{current_user.first_name} #{current_user.last_name}" %></h3>
+	<h3> <%= "Welcome #{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h3>
 	<h5> About the system </h5>
-	<p>This tool allows you to calculate the amount of money</p>
+	<p>This tool currently will allow you to calculate interest over a given period of time,<br /> given some preset conditions.  The future version will allow you to calculate this data<br /> based off the live conditions of each cryptocurrency, as well as compare giving you the ability <br />to compare future earnings, and rates. </p>
 
 <% end %>
 
