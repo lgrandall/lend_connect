@@ -23,9 +23,9 @@ TierLiteral.create(tier_name: "Tier 4",
 										tier_max: 100000.0)
 
 User.create!(
-	email: "test@test.com"
-	password: "password"
-	password_confirmation: "password"
-	first_name: "John"
+	email: "test@test.com",
+	password: "password",
+	password_confirmation: "password",
+	first_name: "John",
 	last_name: "Dikema"
 	)
