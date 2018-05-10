@@ -21,7 +21,7 @@
 				<%= f.label :initial_lended_amount, "Initial Amount" %>
 			</div>
 			<div class="col-sm-2.5 field-formatting">
-				<%= f.number_field :initial_lended_amount %>
+				<%= f.number_field :initial_lended_amount, :value => number_with_precision(f.object.initial_lended_amount, precision: 2 ) %>
 			</div>
 		</div>
 
