@@ -34,19 +34,19 @@
 		<tr>
 			<td><%= @days_of_plan %></td>
 			<td><%= date %></td>
-			<td><%= @interest %></td>
-			<td><%= @active_investment  %></td>
+			<td><%= number_to_currency(@interest) %></td>
+			<td><%= number_to_currency(@active_investment)  %></td>
 			<% extra_interest_calc(@active_investment, @additional_weekday_capital) %>
-			<td><%= @extra_interest %></td>
+			<td><%= number_to_currency(@extra_interest) %></td>
 			<td><%= @extra_interest_rate %></td>
 			<% if @user_scenario.add_investment.present? %>
 				<% additional_investments(date, @active_investment, @extra_interest) %>
 			<% end %>
-			<td><%= @additional_weekday_capital %> </td>
+			<td><%= number_to_currency(@additional_weekday_capital) %> </td>
 			<% if @user_scenario.add_investment_month.present? %>
 				<% month(date, @active_investment, @extra_interest) %>
 			<% end %>
-			<td><%= @additional_monthly_capital %></td>		
+			<td><%= number_to_currency(@additional_monthly_capital) %></td>		
 		</tr>
 		<% end %>
 	</tbody>
