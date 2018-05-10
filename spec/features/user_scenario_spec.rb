@@ -59,5 +59,13 @@ describe 'navigation' do
 		end
 	end
 
+	describe 'delete' do 
+		it 'can be deleted' do 
+			@user_scenario = UserScenario.create(start_date: Date.today, number_days: 30, initial_lended_amount: 3000.00, user_id: user.id, id: 1)
+			visit user_scenarios_path
+			click_link "delete"
 
+			expect(page.status_code).to eq(200)
+		end 
+	end
 end
