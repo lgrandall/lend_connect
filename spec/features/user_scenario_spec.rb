@@ -1,6 +1,7 @@
 require 'rails_helper'
 require 'date'
 
+
 describe 'navigation' do
 	let(:user) {FactoryGirl.create(:user)} 
 	let(:tier_1) {FactoryGirl.create(:tier_1)}
@@ -68,4 +69,51 @@ describe 'navigation' do
 			expect(page.status_code).to eq(200)
 		end 
 	end
+
+	describe 'additional investments' do 
+
+		before do 
+			@tier_2 = TierLiteral.create(tier_name:'tier_2', tier_pct:0.001, tier_days:100, tier_min:1000.00, tier_max:14999.99)
+			@tier_3 = TierLiteral.create(tier_name:'tier_3', tier_pct:0.002, tier_days:80, tier_min:15000.00, tier_max:49999.99)
+			@tier_4 = TierLiteral.create(tier_name:'tier_4', tier_pct:0.003, tier_days:60, tier_min:50000.00, tier_max:100000.00)
+			@user_scenario = UserScenario.create(start_date: Date.today, number_days: 30, initial_lended_amount: 3000.00, user_id: user.id, id: 1)
+		end
+
+		it 'has a function that adds capital on a weekly basis' do 
+
+			visit edit_user_scenario_path(@user_scenario.id)
+			click_button('Add Capital')
+			within('modal')
+			page.check('Sunday')
+			fill_in 'add_investment[newinvest_amt_sun]', with: 15000
+			click_button "Savee"
+			visit edit_user_scenario_path(@user_scenario.id)
+			expect(page).to have_content('$15,000.00')
+		end
+
+		it 'can be edited' do 
+			@add_investment = AddInvestment.new(newinvest_sun: true, newinvest_amt_sun: 15000, user_id: user.id, user_scenario_id: @user_scenario.id )
+			visit edit_user_scenario_path(@user_scenario.id)
+			click_button('Add Capital')
+			within('modal')
+			fill_in 'add_investment[newinvest_amt_sun]', with: ""
+			page.check('Tuesday')
+			fill_in 'add_investment[newinvest_amt_tue]', with: 600
+			click_button "Savee"
+			visit edit_user_scenario_path(@user_scenario.id)
+			expect(page).to have_content('$600.00')
+		end
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+

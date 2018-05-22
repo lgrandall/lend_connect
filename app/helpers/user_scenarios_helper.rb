@@ -1,5 +1,5 @@
 module UserScenariosHelper
-	def extra_interest_calc(active_investment, additional_weekday_capital)
+	def extra_interest_calc(active_investment)
 		# Tier 1 
 
 		extra_interest = @extra_interest
@@ -46,18 +46,11 @@ module UserScenariosHelper
   	additional_weekday_capital = @additional_weekday_capital
   	additional_weekday_capital = 0
   	additional_capital = 0
-
-  	case date.mday
-  	when 0
-	  	if @user_scenario.add_investment.newinvest_month_day_1 == true
-	  		additional_capital = @user_scenario.add_investment.newinvest_month_day_1_amt
-	  	end
-  	end
  
   	case date.wday 
     when 0  #Sunday
       if @user_scenario.add_investment.newinvest_sun == true
-        additional_weekday_capital = @user_scenario.add_investment .newinvest_amt_sun
+        additional_weekday_capital = @user_scenario.add_investment.newinvest_amt_sun
       end
     when 1  #Monday
       if @user_scenario.add_investment.newinvest_mon == true
@@ -93,7 +86,7 @@ module UserScenariosHelper
 end
 
 def month(date, active_investment, extra_interest)
-  additional_monthly_capital = @additional_weekday_capital
+  additional_monthly_capital = @additional_monthly_capital
   additional_monthly_capital = 0
 
     case date.mday

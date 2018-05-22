@@ -20,12 +20,9 @@ class UserScenariosController < ApplicationController
 
 	def new
 		@add_investment = AddInvestment.new
-
 		@add_investment_month = AddInvestmentMonth.new
-
-		@user_scenario = UserScenario.new 
-		@user_scenarios = UserScenario.all
-		
+		@user_scenario = UserScenario.new
+		@user_scenarios = UserScenario.all	
 	end 
 
 	def edit

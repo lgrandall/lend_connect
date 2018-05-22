@@ -1,6 +1,6 @@
 class AddInvestmentsController < ApplicationController
-  before_filter :find_parent, only: [:create, :edit]
-  before_action :set_add_investment, only: [:show, :edit, :update, :destroy]
+  before_filter :find_parent, only: %i[create edit]
+  before_action :set_add_investment, only: %i[show edit update destroy]
 
   # GET /add_investments
   # GET /add_investments.json
@@ -32,7 +32,7 @@ class AddInvestmentsController < ApplicationController
 
     respond_to do |format|
       if @add_investment.save
-        format.html { redirect_to @add_investment, notice: 'Add investment was successfully created.' }
+        format.html { redirect_to @user_scenario, notice: 'Add investment was successfully created.' }
         format.json { render :show, status: :created, location: @add_investment }
         format.js {render js: 'window.top.location.reload(true);'}
       else
